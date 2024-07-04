@@ -7,7 +7,7 @@
     <style>
         .card{
             width:300px;
-            height: 400px;
+            /* height: 400px; */
             border: 1px solid black;
             margin: 10px auto;
             border-radius: 10px;
@@ -29,11 +29,16 @@
         }
         .btn-quantity{
             height: 45px;
+            cursor: pointer;
         }
         .quantity-btn-container{
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .quantity-text{
+            font-size: 40px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -43,11 +48,15 @@
 
         <div class="quantity-btn-container">
             <img src="minus.png" class="btn-quantity">
+            <span class="quantity-text">1</span>
             <img src="plus.png" class="btn-quantity">
 
         </div>
 
         <button class="btn-by-now">By Now</button>
     </div>
+    <script>
+        
+    </script>
 </body>
 </html>
