@@ -37,7 +37,7 @@
             align-items: center;
         }
         .quantity-text{
-            font-size: 40px;
+            font-size: 30px;
             margin-top: 30px;
         }
     </style>
@@ -45,18 +45,22 @@
 <body>
     <div class="card">
         <img src="teddy.jpg" class="teddy">
-
+    
         <div class="quantity-btn-container">
             <img src="minus.png" class="btn-quantity">
-            <span class="quantity-text">1</span>
-            <img src="plus.png" class="btn-quantity">
-
+            <span class="quantity-text" id="quantity-text">1</span>
+            <img src="plus.png" class="btn-quantity" onclick="inc()">
         </div>
-
-        <button class="btn-by-now">By Now</button>
+    
+        <button class="btn-by-now">Buy Now</button>
     </div>
+    
     <script>
-        
+        function inc() {
+            const quantityElement = document.getElementById("quantity-text");
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+        }
     </script>
 </body>
 </html>

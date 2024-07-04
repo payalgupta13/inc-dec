@@ -1,0 +1,26 @@
+<div class="card">
+    <img src="teddy.jpg" class="teddy">
+
+    <div class="quantity-btn-container">
+
+        <img src="minus.png" class="btn-quantity">
+
+        <span class="quantity-text" id="quantity-text">
+            1
+        </span>
+
+        <img src="plus.png" class="btn-quantity" onclick="inc()"/>
+
+    </div>
+
+    <button class="btn-by-now">By Now</button>
+</div>
+<script>
+    function inc(){
+        const quantityElement = document.getElementById("quantity-text")
+
+        let quantity = parsrInt(quantityElement.innerText);
+
+        quantityElement.innerText = ++quantity;
+    }
+</script>
