@@ -66,21 +66,19 @@
             const quantityElement = document.getElementById("quantity-text");
             let quantity = parseInt(quantityElement.innerText);
 
-            if (action=="inc") {
-                quantityElement.innerText = ++quantity;    
+            if(quantity==1 && action=='dec'){
+                alert('Quantity cannot be less than 1')
+                return
             }
-            else{
-                quantityElement.innerText = --quantity;  
+            else if(quantity==5 && action=='inc'){
+                alert('Quantity cannot be greater than 5')
+                return
             }
-        }
+            quantityElement.innerText = action=='inc' ? ++quantity : --quantity
 
-        
+            
+            }
     </script>
 </body>
 </html>
 
-// function dec() {
-    //     const quantityElement = document.getElementById("quantity-text");
-    //     let quantity = parseInt(quantityElement.innerText);
-    //     quantityElement.innerText = --quantity;
-    // }
