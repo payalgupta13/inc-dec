@@ -11,9 +11,10 @@
             border: 1px solid black;
             margin: 10px auto;
             border-radius: 10px;
+            background-color: aquamarine;
         }
         .teddy{
-            height: 100px;
+            height: 150px;
             display: block;
             margin: 10px auto;
         }
@@ -25,7 +26,12 @@
             border-radius: 25px;
             border: 1px solid black;
             cursor: pointer;
+            background-color: rgb(247,80,80);
 
+        }
+        .btn-buy-now:hover{
+            border-radius: 10px;
+            border: 1px solid black;
         }
         .btn-quantity{
             height: 45px;
@@ -33,7 +39,7 @@
         }
         .quantity-btn-container{
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
         }
         .quantity-text{
@@ -47,20 +53,34 @@
         <img src="teddy.jpg" class="teddy">
     
         <div class="quantity-btn-container">
-            <img src="minus.png" class="btn-quantity">
+            <img src="minus.png" class="btn-quantity" onclick="handleQuantityChange('dec')">
             <span class="quantity-text" id="quantity-text">1</span>
-            <img src="plus.png" class="btn-quantity" onclick="inc()">
+            <img src="plus.png" class="btn-quantity" onclick="handleQuantityChange('inc')">
         </div>
     
         <button class="btn-by-now">Buy Now</button>
     </div>
     
     <script>
-        function inc() {
+        function handleQuantityChange(action) {
             const quantityElement = document.getElementById("quantity-text");
             let quantity = parseInt(quantityElement.innerText);
-            quantityElement.innerText = ++quantity;
+
+            if (action=="inc") {
+                quantityElement.innerText = ++quantity;    
+            }
+            else{
+                quantityElement.innerText = --quantity;  
+            }
         }
+
+        
     </script>
 </body>
 </html>
+
+// function dec() {
+    //     const quantityElement = document.getElementById("quantity-text");
+    //     let quantity = parseInt(quantityElement.innerText);
+    //     quantityElement.innerText = --quantity;
+    // }
